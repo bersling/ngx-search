@@ -13,4 +13,10 @@ export class AppComponent {
     private searchService: SearchService
   ) {}
 
+  onKeydown(evt) {
+    if (evt.key === 'Enter') {
+      this.searchService.doSearch(evt.target.value);
+    }
+  }
+
 }

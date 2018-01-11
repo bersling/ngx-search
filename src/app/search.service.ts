@@ -12,11 +12,7 @@ export class SearchService {
     ['tbs', `cdr:1,cd_min:${this.todayAmericanFormat},cd_max:7/31/2016`]
   ];
 
-
   constructor() {
-    const mockQuery = 'ngif bla blub';
-    const q = this.buildQuery(mockQuery);
-    this.doSearch(q);
   }
 
   buildQuery(userInput: string) {
@@ -26,7 +22,8 @@ export class SearchService {
   }
 
   doSearch(q: string) {
-    window.location.href = 'https://www.google.com/search?' + q;
+    const builtQuery = this.buildQuery(q);
+    window.location.href = 'https://www.google.com/search?' + builtQuery;
   }
 
 }
